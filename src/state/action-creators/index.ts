@@ -18,7 +18,7 @@ export const searchRepositories = (term: string) => {
         return result.package.name;
       });
       dispatch({
-        type: ActionType.SEARCH_REPOSITORIES,
+        type: ActionType.SEARCH_REPO_SUCCESS,
         payload: names,
       });
     } catch (error) {
