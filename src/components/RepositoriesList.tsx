@@ -14,12 +14,18 @@ const RepositoriesList: React.FC = () => {
 
     searchRepositories(term);
   };
+
+  const repoList = data.map((item) => <li>{item}</li>);
   return (
     <div>
       <form onSubmit={onSubmit}>
         <input value={term} onChange={(e) => setTerm(e.target.value)}></input>
         <button>Search</button>
       </form>
+
+      {error && <h3>{error}</h3>}
+      {loading && <h3>Loading...</h3>}
+      {!error && !loading && <ul>{repoList}</ul>}
     </div>
   );
 };
